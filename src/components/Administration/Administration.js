@@ -6,13 +6,13 @@ const Administration = () => {
     const [allbookings, setAllBookings] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/allBookings')
+        fetch('https://limitless-dawn-06661.herokuapp.com/allBookings')
             .then(res => res.json())
             .then(data => setAllBookings(data));
     }, [])
 
     const deleteProduct=(id) =>{
-        fetch(`http://localhost:5000/delete/${id}`, {
+        fetch(`https://limitless-dawn-06661.herokuapp.com/delete/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

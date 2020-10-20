@@ -12,7 +12,7 @@ const Enrolled = () => {
     const history = useHistory();
 
     useEffect(() =>{
-        fetch('http://localhost:5000/bookings?email='+loggedInUser.email,{
+        fetch('https://limitless-dawn-06661.herokuapp.com/bookings?email='+loggedInUser.email,{
             method: 'GET',
             headers: { 'Content-Type': 'application/json',
                         authorization: `Bearer ${sessionStorage.getItem('token')}`
@@ -22,7 +22,7 @@ const Enrolled = () => {
         .then(data => setBookings(data));
     },[])
     const deleteProduct=(id) =>{
-        fetch(`http://localhost:5000/delete/${id}`, {
+        fetch(`https://limitless-dawn-06661.herokuapp.com/delete/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
